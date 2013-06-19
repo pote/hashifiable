@@ -2,7 +2,7 @@
 
 A simple way to specify the hash/json representation of your object
 
-## Description
+#### TL;DR
 
 With hashify you can specify a line with the methods that will be called to
 create a hash representation of your object. Simple and straightforward.
