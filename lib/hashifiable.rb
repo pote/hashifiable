@@ -1,6 +1,6 @@
 require 'json'
 
-module Hashify
+module Hashifiable
   def hashify(*args)
     ## Defines to_hash with specified arguments.
     define_method :to_hash do
@@ -17,8 +17,4 @@ module Hashify
       self.to_hash.to_json
     end
   end
-end
-
-class Object
-  include Hashify
 end

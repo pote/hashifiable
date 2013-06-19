@@ -1,4 +1,4 @@
-module Hashify
+module Hashifiable
   module Version
     MAJOR = 0
     MINOR = 0

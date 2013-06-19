@@ -1,9 +1,9 @@
 # encoding: utf-8
-require File.join([File.dirname(__FILE__), 'lib', 'hashify', 'version.rb'])
+require File.join([File.dirname(__FILE__), 'lib', 'hashifiable', 'version.rb'])
 
 Gem::Specification.new do |s|
-  s.name              = "hashify"
-  s.version           = Hashify::VERSION
+  s.name              = "hashifiable"
+  s.version           = Hashifiable::VERSION
   s.summary           = "A simple way to specify the hash/json representation of your object"
   s.description       = "
       With hashify you can specify a line with the methods that will be called to

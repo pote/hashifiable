@@ -1,11 +1,12 @@
-require File.expand_path("../lib/hashify", File.dirname(__FILE__))
+require File.expand_path("../lib/hashifiable", File.dirname(__FILE__))
 require 'spec_helper'
 
 class TestUser < Struct.new(:id, :name, :credit_card, :secret_token)
+  extend Hashifiable
   hashify :id, :name
 end
 
-describe Hashify do
+describe Hashifiable do
   before do
     @user = TestUser.new(1, 'pote', '1123123241241', 'i2j34i2j34302843')
   end
