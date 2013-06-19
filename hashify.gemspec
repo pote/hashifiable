@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
   s.files             = Dir['lib/**/*.rb']
   s.require_paths << 'lib'
   s.license           = "MIT"
+  s.add_development_dependency "rspec"
 end
