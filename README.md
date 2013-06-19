@@ -27,7 +27,13 @@ user.to_json
 #=> "{\"id\":1,\"name\":\"pote\",\"state\":\"active\"}"
 ```
 
-As simple as that, I find most gems with similar functionality to be overkill and do too much, if you want to define whatever complex structure to be included you can simply define a method in your object that returns said object as a hash/array/whatever and include it by name in the `hashify` statement. Like so:
+As simple as that, I find most gems with similar functionality to simply do too much, Hashifiable provides a minimum interface
+to solve the problem of object representation (mostly to be used in APIs) without too much fuzz.
+
+**Note**: I would recommend that every item in the `hashify` call to be hashes, arrays, strings, symbols and the like. Hashifiable also adds
+a `#to_json` method to your object and for that to work all the values should be json-serializable. 
+
+If you want to define whatever complex structure to be included you can simply define a method in your object that returns said structure as a hash/array/whatever and include it by name in the `hashify` statement. Like so:
 
 ```ruby
 class User < ActiveRecord::Base
