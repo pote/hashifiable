@@ -1,6 +1,7 @@
 # Hashifiable
 
 A simple way to specify the hash/json representation of your object
+[![Build Status](https://travis-ci.org/pote/hashifiable.png?branch=master)](https://travis-ci.org/pote/hashifiable)
 
 #### TL;DR
 
