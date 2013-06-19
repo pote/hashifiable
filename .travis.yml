@@ -1,4 +1,7 @@
 language: ruby
+test: rspec
 rvm:
+  - ruby-head
+  - 2.0.0
   - 1.9.3
-  - rbx-2-0.0
+  - rbx-19mode
