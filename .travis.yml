@@ -1,5 +1,11 @@
 language: ruby
-test: rspec
+
+before_install:
+  - bundle install
+
+script:
+  - rspec
+
 rvm:
   - ruby-head
   - 2.0.0
