@@ -26,7 +26,20 @@ user.to_json
 #=> "{\"id\":1,\"name\":\"pote\",\"state\":\"active\"}"
 ```
 
-As simple as that, I find most gems with similar functionality to be overkill, if you want to define complex subhashes to be included you can simply define a method in your object that returns said hash with the appropriate name and include it by name in the `hashify` statement.
+As simple as that, I find most gems with similar functionality to be overkill and do too much, if you want to define complex subhashes to be included you can simply define a method in your object that returns said hash include it by name in the `hashify` statement. Like so:
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :activity_logs
+
+  extend Hashifiable
+  hashify :id, :name, :activity
+
+  def activity
+    self.activity_logs.map(&:to_hash)
+  end
+end
+```
 
 ## Installation
 
