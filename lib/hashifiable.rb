@@ -5,8 +5,8 @@ module Hashifiable
     ## Defines to_hash with specified arguments.
     define_method :to_hash do
       hash_representation = {}
-      args.each do |attribute|
-        hash_representation[attribute] = self.send(attribute)
+      args.each do |attr|
+        hash_representation[attr] = self.send(attr) if self.respond_to?(attr)
       end
 
       hash_representation

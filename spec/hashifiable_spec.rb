@@ -2,7 +2,7 @@ require 'spec_helper'
 
 class TestUser < Struct.new(:id, :name, :credit_card, :secret_token)
   extend Hashifiable
-  hashify :id, :name
+  hashify :id, :name, :i_do_not_exist
 end
 
 describe Hashifiable do
@@ -24,5 +24,6 @@ describe Hashifiable do
   it 'shouldnt have unspecified data' do
     user.to_hash.keys.include?(:credit_card).should be_false
     user.to_hash.keys.include?(:secret_token).should be_false
+    user.to_hash.keys.include?(:i_do_not_exist).should be_false
   end
 end
