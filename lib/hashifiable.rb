@@ -1,4 +1,5 @@
 module Hashifiable
+
   def hashify(*args)
 
     ## Defines to_hash method dinamically with the key/values specified
