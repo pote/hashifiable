@@ -15,10 +15,6 @@ describe Hashifiable do
     @user.respond_to?(:to_hash).should be_true
   end
 
-  it 'should have a to_json method' do
-    @user.respond_to?(:to_json).should be_true
-  end
-
   it 'should have a hash representation of the desired attributes' do
     @user.to_hash.keys.include?(:id).should be_true
     @user.to_hash.keys.include?(:name).should be_true

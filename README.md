@@ -23,9 +23,6 @@ user = User.new(1, 'pote', 'active', 'real credit card number', 'super secret to
 
 user.to_hash
 #=> {:id=>1, :name=>"pote", :state=>"active"}
-
-user.to_json
-#=> "{\"id\":1,\"name\":\"pote\",\"state\":\"active\"}"
 ```
 
 As simple as that, I find most gems with similar functionality to simply do too much, Hashifiable provides a minimum interface
@@ -45,12 +42,9 @@ class User < ActiveRecord::Base
 end
 ```
 
-#### Note:
+#### Complex structures
 
-I would recommend that every item in the `hashify` call to be hashes, arrays, strings, symbols and the like. Hashifiable also adds
-a `#to_json` method to your object and for that to work all the values should be json-serializable. 
-
-If you want to define whatever complex structure to be included you can simply define a method in your object that returns said structure as a hash/array/whatever and include it by name in the `hashify` statement. Like so:
+If you want to define whatever complex structure to be included you can simply define a method in your object that returns said structure and include it by name in the `hashify` statement. Like so:
 
 ```ruby
 class User < ActiveRecord::Base
