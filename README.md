@@ -21,7 +21,7 @@ end
 
 user = User.new(1, 'pote', 'active', 'real credit card number', 'super secret token')
 
-user.to_hash
+user.to_h
 #=> {:id=>1, :name=>"pote", :state=>"active"}
 
 user.to_json
@@ -61,8 +61,8 @@ class User < ActiveRecord::Base
 
   def activity
   {
-    logs: self.activity_logs.map(&:to_hash),
-    appointments: self.appointments.map(&:to_hash),
+    logs: self.activity_logs.map(&:to_h),
+    appointments: self.appointments.map(&:to_h),
     random: {
       i_am_a_key: 'And I am a value',
       bacon:  'cats'
