@@ -29,6 +29,12 @@ describe Hashifiable do
     @user.to_h.keys.include?(:secret_token).should be_false
   end
 
+  it 'should change the hash representation when the attribute/method output changes' do
+    @user.to_h[:id].should == 1
+    @user.id = 2
+    @user.to_h[:id].should == 2
+  end
+
   it 'should include procs in the hash representation' do
     @user.to_h.keys.include?(:two_times_two).should be_true
   end
