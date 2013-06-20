@@ -31,9 +31,9 @@ user.to_json
 As simple as that, I find most gems with similar functionality to simply do too much, Hashifiable provides a minimum interface
 to solve the problem of object representation (mostly to be used in APIs) without too much fuzz.
 
-#### Passinc Procs and lambdas
+#### Passing Procs and lambdas
 
-You can also declare a Proc or a lambda instead of just specifying a method name to call.
+You can also declare a Proc or a lambda instead of just specifying a method name.
 
 ```ruby
 class User < ActiveRecord::Base
