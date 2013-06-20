@@ -3,7 +3,7 @@ require 'spec_helper'
 
 class TestUser < Struct.new(:id, :name, :credit_card, :secret_token)
   extend Hashifiable
-  hashify :id, :name
+  hashify :id, :name, :two_times_two => Proc.new { 2 * 2 }, :encrypted_token => Proc.new { secret_token + ' secret sauce' }
 end
 
 describe Hashifiable do
@@ -27,5 +27,21 @@ describe Hashifiable do
   it 'shouldnt have unspecified data' do
     @user.to_hash.keys.include?(:credit_card).should be_false
     @user.to_hash.keys.include?(:secret_token).should be_false
+  end
+
+  it 'should include procs in the hash representation' do
+    @user.to_hash.keys.include?(:two_times_two).should be_true
+  end
+
+  it 'should return the output of the function and not a proc' do
+    @user.to_hash[:two_times_two].should == 4
+  end
+
+  it 'should call the methods on the fly instead of just assignign whatever the result is at definition time' do
+    @user.to_hash[:encrypted_token].should == @user.secret_token + ' secret sauce'
+
+    @user.secret_token = 'NEW STUFF'
+
+    @user.to_hash[:encrypted_token].should == @user.secret_token + ' secret sauce'
   end
 end
