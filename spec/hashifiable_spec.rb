@@ -3,7 +3,7 @@ require 'spec_helper'
 
 class TestUser < Struct.new(:id, :name, :credit_card, :secret_token)
   extend Hashifiable
-  hashify :id, :name, :two_times_two => Proc.new { 2 * 2 }, :encrypted_token => Proc.new { secret_token + ' secret sauce' }
+  hashify :id, :name, :two_times_two => Proc.new { 2 * 2 }, :encrypted_token => Proc.new { secret_token + ' secret sauce' }, lambdas_at_work: ->() { 2 * 2 }
 end
 
 describe Hashifiable do
@@ -43,5 +43,9 @@ describe Hashifiable do
     @user.secret_token = 'NEW STUFF'
 
     @user.to_hash[:encrypted_token].should == @user.secret_token + ' secret sauce'
+  end
+
+  it 'should also allow lambdas to be used instead of Procs' do
+    @user.to_hash[:lambdas_at_work].should == 4
   end
 end
