@@ -7,19 +7,22 @@ module Hashifiable
     define_method :to_h do
       hash_representation = {}
 
-      methods = args.select { |a| a.is_a?(Symbol) }
-      procs   = args.select { |a| a.is_a?(Hash)   }.inject do |all, hash|
-        all.merge(hash)
-      end
-
-      ## Create keys for all lambdas sent.
-      procs.each do |name, function|
-        hash_representation[name] = instance_exec(&function)
-      end
-
-      ## Create keys for all methods specified.
-      methods.each do |attribute|
-        hash_representation[attribute] = self.send(attribute)
+      args.each do |argument|
+        case argument
+        when Symbol
+          ## Calls the specified method on the object and stores it
+          ## under the method name.
+          hash_representation[argument] = self.send(argument)
+        when Hash
+          ## Takes the key of the hash passed as the key in the object's
+          ## hash, the Proc/lambda is called in the context of the object
+          ## to provide the value in the hash.
+          argument.each do |name, function|
+            hash_representation[name] = instance_exec(&function)
+          end
+        else
+          raise ArgumentError
+        end
       end
 
       hash_representation

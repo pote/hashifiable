@@ -78,3 +78,8 @@ $ gem install hashify
 $ bundle install
 $ rspec
 ```
+
+## Thanks
+
+* To @soveran, for an alternative and prettier implementation than the one I had came up with originally.
+* To @tizoc for great constructive criticism and pointing me towards instance_exec, of which I didn't know about. :)
