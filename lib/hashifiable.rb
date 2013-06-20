@@ -4,7 +4,7 @@ module Hashifiable
 
     ## Defines to_hash method dinamically with the key/values specified
     ## in *args.
-    define_method :to_hash do
+    define_method :to_h do
       hash_representation = {}
 
       methods = args.select { |a| a.is_a?(Symbol) }
@@ -24,5 +24,7 @@ module Hashifiable
 
       hash_representation
     end
+
+    alias_method :to_hash, :to_h
   end
 end
