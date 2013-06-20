@@ -21,7 +21,7 @@ end
 
 user = User.new(1, 'pote', 'active', 'real credit card number', 'super secret token')
 
-user.to_h
+user.to_h     # Yes, #to_hash works too, but be good and use to_h. :)
 #=> {:id=>1, :name=>"pote", :state=>"active"}
 ```
 
