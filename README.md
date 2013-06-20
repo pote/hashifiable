@@ -38,7 +38,10 @@ class User < ActiveRecord::Base
   has_many :hobbies
 
   extend Hashifiable
-  hashify :id, :name, :hobbies => Proc.new { hobbies.map(:&to_hash) }, :right_now => lambda { Time.now }
+  hashify :id,
+          :name,
+          :hobbies => Proc.new { hobbies.map(:&to_hash) },
+          :right_now => lambda { Time.now }
 end
 ```
 
