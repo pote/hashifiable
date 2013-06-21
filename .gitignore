@@ -1,3 +1,5 @@
 *.gem
 .ruby-version
 .rbx
+.rvmrc
+Gemfile.lock
