@@ -72,7 +72,7 @@ end
 ## Installation
 
 ```
-$ gem install hashify
+$ gem install hashifiable
 ```
 
 #### Development setup
