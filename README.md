@@ -3,6 +3,7 @@
 A simple way to specify the hash/json representation of your object
 
 [![Build Status](https://travis-ci.org/pote/hashifiable.png?branch=master)](https://travis-ci.org/pote/hashifiable)
+[![Code Climate](https://codeclimate.com/github/pote/hashifiable.png)](https://codeclimate.com/github/pote/hashifiable)
 
 #### TL;DR
 
