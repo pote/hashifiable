@@ -30,7 +30,7 @@ describe Hashifiable do
     user.to_h.keys.should_not include(:secret_token)
   end
 
-  it 'should change the hash representation when the attribute/method output changes' do
+  it 'should change the hash representation when the method output changes' do
     user.to_h[:id].should == 1
     user.id = 2
     user.to_h[:id].should == 2
@@ -44,7 +44,7 @@ describe Hashifiable do
     user.to_h[:two_times_two].should == 4
   end
 
-  it 'should call the methods on the fly instead of just assigning whatever the result is at definition time' do
+  it 'should call the methods on the fly' do
     user.to_h[:encrypted_token].should == user.secret_token + ' secret sauce'
 
     user.secret_token = 'NEW STUFF'
