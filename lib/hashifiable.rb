@@ -20,8 +20,7 @@ module Hashifiable
           argument.each do |name, function|
             hash_representation[name] = instance_exec(&function)
           end
-        else
-          raise ArgumentError
+        else raise ArgumentError
         end
       end
 
