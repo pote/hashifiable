@@ -9,7 +9,7 @@ module Hashifiable
 
       args.each do |argument|
         case argument
-        when Symbol
+        when Symbol, String
           ## Calls the specified method on the object and stores it
           ## under the method name.
           hash_representation[argument] = self.send(argument)
