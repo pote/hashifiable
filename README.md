@@ -88,3 +88,7 @@ $ rspec
 * To [@soveran](http://github.com/soveran) for an alternative and prettier implementation than the one I had came up with originally.
 * To [@tizoc](http://github.com/tizoc) for great constructive criticism and pointing me towards instance_exec, of which I didn't know about. :)
 * To all [contributors](https://github.com/pote/hashifiable/graphs/contributors)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pote/hashifiable/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
