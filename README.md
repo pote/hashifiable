@@ -1,4 +1,7 @@
-# Hashifiable [![Build Status](https://travis-ci.org/pote/hashifiable.png?branch=master)](https://travis-ci.org/pote/hashifiable) [![Code Climate](https://codeclimate.com/github/pote/hashifiable.png)](https://codeclimate.com/github/pote/hashifiable)
+# Hashifiable [![Build Status](https://travis-ci.org/pote/hashifiable.png?branch=master)](https://travis-ci.org/pote/hashifiable) [![Code Climate](https://codeclimate.com/github/pote/hashifiable.png)](https://codeclimate.com/github/pote/hashifiable) <script data-gratipay-username="pote"
+  data-gratipay-widget="button"
+  src="//grtp.co/v1.js">
+</script>
 
 With Hashifiable you can specify a line with the methods that will be called to create a hash representation
 of your object. Simple and straightforward.
